@@ -2,38 +2,52 @@
 <html>
 <head>
     <title>CarRental - Register</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/register.css">
 </head>
 <body>
-
 <jsp:include page="fragments_jsp/main_nav.jsp" />
-<main class="form-signin">
-    <form class="text-center" action="/register" method="post">
+<main>
+    REJESTRACJA
+    <form action="register" method="post">
+        <label for="email-input">Email </label>
+        <input id="email-input" type="email" name="email">
+        </br>
+        <label for="firstName-input">Imie </label>
+        <input id="firstName-input" type="text" name="firstName">
+        </br>
+        <label for="lastName-input">Nazwisko </label>
+        <input id="lastName-input" type="text" name="lastName">
+        </br>
+        <label for="password-input">Haslo </label>
+        <input id="password-input" type="password" name="password">
+        </br>
 
-        <h1 class="h3 mb-3 fw-normal">Register</h1>
+        </br>
+        <label for="country-input">Kraj </label>
+        <input id="country-input" type="text" name="country">
+        </br>
+        </br>
+        <label for="city-input">Miasto </label>
+        <input id="city-input" type="text" name="city">
+        </br>
+        </br>
+        <label for="street-input">Ulica </label>
+        <input id="street-input" type="text" name="streat">
+        </br>
+        </br>
+        <label for="flatNumber-input">Numer mieszkania </label>
+        <input id="flatNumber-input" type="text" name="flatNumber">
+        </br>
+        </br>
+        <label for="zipCode-input">Kod pocztowy </label>
+        <input id="zipCode-input" type="number" name="zipCode">
+        </br>
 
-
-        <div class="form-floating">
-            <input type="text" class="form-control" id="firstName">
-            <label for="firstName">First Name</label>
-        </div>
-        <div class="form-floating">
-            <input type="text" class="form-control" id="lastName">
-            <label for="lastName">Last Name</label>
-        </div>
-        <div class="form-floating">
-            <input type="email" class="form-control" id="email" >
-            <label for="email">Email</label>
-        </div>
-        <div class="form-floating">
-            <input type="password" class="form-control" id="password">
-            <label for="password">Password</label>
-        </div>
-
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign Up</button>
+        <input type="submit" value="Zarejestruj">
     </form>
+
 </main>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>
 </html>

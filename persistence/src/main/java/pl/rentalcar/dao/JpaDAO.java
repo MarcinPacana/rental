@@ -7,9 +7,12 @@ import org.hibernate.query.Query;
 import pl.rentalcar.HibernateCfg;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class JpaDAO<E> {
-    private static SessionFactory sessionFactory;
+
+    protected static final SessionFactory sessionFactory;
 
     static {
         sessionFactory = HibernateCfg.getSessionFactory();
@@ -56,11 +59,41 @@ public class JpaDAO<E> {
 
     public List<E> findWithNameQuery(String nameQuery) {
         Session session = sessionFactory.openSession();
-        Query query = session.createQuery(nameQuery);
+        Query query = session.createNamedQuery(nameQuery);
         List<E> resultList = query.getResultList();
         session.close();
         return resultList;
     }
 
+    public List<E> findWithNameQuery(String nameQuery,String paramName, Object paramValue) {
+        Session session = sessionFactory.openSession();
+        Query query = session.createNamedQuery(nameQuery);
+        query.setParameter(paramName,paramValue);
+        List<E> resultList = query.getResultList();
+        session.close();
+        return resultList;
+    }
+
+    public List<E> findWithNameQuery(String nameQuery, Map<String,Object> paramsMap) {
+        Session session = sessionFactory.openSession();
+        Query query = session.createNamedQuery(nameQuery);
+        Set<Map.Entry<String, Object>> setParameters = paramsMap.entrySet();
+        for (Map.Entry<String,Object> entry : setParameters){
+            query.setParameter(entry.getKey(), entry.getValue());
+        }
+        List<E> resultList = query.getResultList();
+        session.close();
+        return resultList;
+    }
+
+
+
+
+
+    public void close(){
+        if (sessionFactory != null){
+            sessionFactory.close();
+        }
+    }
 
 }

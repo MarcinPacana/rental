@@ -13,7 +13,7 @@ public class Reservation {
     private int id;
 
     @ManyToOne
-    @JoinColumn(name = "customer_id")
+    @JoinColumn(name = "klient_id")
     private Customer customer;
 
     @ManyToOne
