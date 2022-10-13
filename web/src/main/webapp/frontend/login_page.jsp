@@ -2,11 +2,11 @@
 <html>
 <head>
     <title>CarRental - Login</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/login.css">
 </head>
 <body>
-<jsp:include page="fragments_jsp/main_nav.jsp" />
+<jsp:include page="../fragments_jsp/main_nav.jsp" />
 <main>
     <h3>LOGOWANIE</h3>
     <div>

@@ -2,16 +2,26 @@
 <html>
 <head>
     <title>CarRental - Register</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/register.css">
 </head>
 <body>
-<jsp:include page="fragments_jsp/main_nav.jsp" />
+<jsp:include page="../fragments_jsp/main_nav.jsp" />
 <main>
     REJESTRACJA
+
+    <c:if test="${requestScope.message != null}">
+        <div align="center">
+            <h4 class="message">${requestScope.message}</h4>
+        </div>
+    </c:if>
+
     <form action="register" method="post">
         <label for="email-input">Email </label>
         <input id="email-input" type="email" name="email">
+        </br>
+        <label for="phone-input">Numer telefonu </label>
+        <input id="phone-input" type="number" name="phoneNumber">
         </br>
         <label for="firstName-input">Imie </label>
         <input id="firstName-input" type="text" name="firstName">

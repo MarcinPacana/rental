@@ -28,6 +28,9 @@ public class Customer {
 
     private String email;
 
+    @Column(name = "numer_telefonu")
+    private int phoneNumber;
+
     @Column(name = "haslo")
     private String password;
 
@@ -85,6 +88,14 @@ public class Customer {
 
     public String getEmail() {
         return email;
+    }
+
+    public int getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(int phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public void setEmail(String email) {

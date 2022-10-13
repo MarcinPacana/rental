@@ -1,6 +1,8 @@
-package pl.rentalcar.servlets;
+package pl.rentalcar.servlets.frontend.customer;
 
-import pl.rentalcar.LoginController;
+import pl.rentalcar.frontend.LoginController;
+import pl.rentalcar.PageList;
+import pl.rentalcar.impl.CustomerService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,12 +17,12 @@ public class LoginServlet extends HttpServlet {
     private LoginController loginController;
 
     public LoginServlet() {
-        this.loginController = new LoginController();
+        this.loginController = new LoginController(new CustomerService());
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("login_page.jsp").forward(req,resp);
+        req.getRequestDispatcher(PageList.LOGIN_PAGE).forward(req,resp);
     }
 
     @Override
