@@ -4,7 +4,7 @@ import pl.rentalcar.PageList;
 import pl.rentalcar.PageUtility;
 import pl.rentalcar.UserService;
 import pl.rentalcar.entity.Customer;
-import pl.rentalcar.impl.GeneratorService;
+import pl.rentalcar.GeneratorService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;

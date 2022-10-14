@@ -29,6 +29,12 @@ public class CarDAO extends JpaDAO<Car> implements GenericCRUD<Car>{
 
     @Override
     public List<Car> getAll() {
-        return super.findWithNameQuery("car.getAll");
+        List<Car> list = super.findWithNameQuery("car.getAll");
+        int size = list.size();
+        System.out.println("Size of listCar: "+size);
+        for (Car c:list) {
+            System.out.println(c.toString());
+        }
+        return list;
     }
 }
