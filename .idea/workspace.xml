@@ -9,8 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9aa686cb-231a-4e83-9e8b-a9643806b530" name="Changes" comment="use case: adding car by admin">
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/pl/rentalcar/entity/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/pl/rentalcar/entity/Car.java" afterDir="false" />
+    <list default="true" id="4f52bbc0-94d3-497b-be13-160143300bb2" name="Changes" comment="use case: adding car by admin">
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/pl/rentalcar/servlets/admin/customer/AddNewCustomerServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/pl/rentalcar/servlets/admin/customer/DeleteCustomerServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/03b584c3-1615-42fd-a1c3-ee860eb8c670/entities/entities.dat" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/03b584c3-1615-42fd-a1c3-ee860eb8c670/entities/entities.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/03b584c3-1615-42fd-a1c3-ee860eb8c670/entities/entities.dat.values" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/03b584c3-1615-42fd-a1c3-ee860eb8c670/entities/entities.dat.values" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/03b584c3-1615-42fd-a1c3-ee860eb8c670/entities/entities.dat.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/03b584c3-1615-42fd-a1c3-ee860eb8c670/entities/entities.dat.values.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/03b584c3-1615-42fd-a1c3-ee860eb8c670/entities/entities.dat_i" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/03b584c3-1615-42fd-a1c3-ee860eb8c670/entities/entities.dat_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +39,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -80,13 +87,13 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3" value="junit.framework.TestCase" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/persistence/src/main/java/pl/rentalcar" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../projectcar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15527344" />
     <property name="project.structure.side.proportion" value="0.2055785" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="vcs.Mercurial" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -289,9 +296,12 @@
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\MarcinP\AppData\Roaming\Subversion</configuration>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9aa686cb-231a-4e83-9e8b-a9643806b530" name="Changes" comment="" />
+      <changelist id="4f52bbc0-94d3-497b-be13-160143300bb2" name="Changes" comment="" />
       <created>1658247224096</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -305,6 +315,9 @@
       <workItem from="1665583127449" duration="2271000" />
       <workItem from="1665592400664" duration="19865000" />
       <workItem from="1665649796331" duration="44999000" />
+      <workItem from="1665863873207" duration="1723000" />
+      <workItem from="1665865638331" duration="202000" />
+      <workItem from="1665867795221" duration="89000" />
     </task>
     <task id="LOCAL-00001" summary="init commit - created structure application">
       <created>1658266793540</created>
@@ -334,7 +347,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665784050417</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="use case: adding car by admin">
+      <created>1665864905897</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1665864905897</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -343,11 +363,46 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="854fad09-4f71-4234-ae1f-88b3bd12f904">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:C:/Projekty IT/PORTFOLIIO/rental/.idea" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State />
           </value>
         </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="854fad09-4f71-4234-ae1f-88b3bd12f904" value="TOOL_WINDOW" />
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
