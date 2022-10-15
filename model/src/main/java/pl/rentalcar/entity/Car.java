@@ -1,9 +1,7 @@
 package pl.rentalcar.entity;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Base64;
-import java.util.List;
+import java.util.*;
 
 @NamedQueries({
         @NamedQuery(name = "car.getAll", query = "select c from Car c")
@@ -48,7 +46,7 @@ public class Car {
     private float price;
 
     @Column(name = "zdjecie")
-    private byte[] image;
+    private byte[] image ;
 
 
     @Transient
@@ -58,10 +56,6 @@ public class Car {
     private List<Reservation> carReservations = new ArrayList<>(0);
 */
 
-    /*
-    @Transient
-    private String imageBase64;
-     */
 
     @Transient
     public String getStringAirConditioning() {
@@ -145,8 +139,6 @@ public class Car {
         this.enginePower = enginePower;
     }
 
-
-
     public float getPrice() {
         return price;
     }
@@ -192,11 +184,35 @@ public class Car {
 
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Car)) return false;
+        Car car = (Car) o;
+        return getId() == car.getId() && getSeats() == car.getSeats() && getTrunkSize() == car.getTrunkSize() && getDors() == car.getDors() && getEnginePower() == car.getEnginePower() && Float.compare(car.getPrice(), getPrice()) == 0 && Objects.equals(getBrand(), car.getBrand()) && Objects.equals(getModel(), car.getModel()) && Objects.equals(getColor(), car.getColor()) && Objects.equals(isAirConditioning(), car.isAirConditioning()) && Objects.equals(getGearBox(), car.getGearBox()) && Arrays.equals(getImage(), car.getImage());
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(getId(), getBrand(), getModel(), getColor(), getSeats(), isAirConditioning(), getTrunkSize(), getDors(), getGearBox(), getEnginePower(), getPrice());
+        result = 31 * result + Arrays.hashCode(getImage());
+        return result;
+    }
+
+
+    @Override
     public String toString() {
         return "Car{" +
                 "id=" + id +
                 ", brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
+                ", color='" + color + '\'' +
+                ", seats=" + seats +
+                ", airConditioning=" + airConditioning +
+                ", trunkSize=" + trunkSize +
+                ", dors=" + dors +
+                ", gearBox='" + gearBox + '\'' +
+                ", enginePower=" + enginePower +
+                ", price=" + price +
                 '}';
     }
 }
