@@ -3,9 +3,9 @@ package pl.rentalcar.admin.implement;
 import pl.rentalcar.MessageService;
 import pl.rentalcar.PageList;
 import pl.rentalcar.PageUtility;
-import pl.rentalcar.UserService;
 import pl.rentalcar.admin.AdminController;
 import pl.rentalcar.entity.User;
+import pl.rentalcar.impl.UserService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -15,7 +15,7 @@ import java.io.IOException;
 
 public class AdminControllerImpl implements AdminController {
 
-    UserService<User> userService;
+    UserService userService;
     MessageService messageService;
 
     public AdminControllerImpl() {
@@ -26,17 +26,15 @@ public class AdminControllerImpl implements AdminController {
     @Override
     public void loginAdmin(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        System.out.println("metoda: loginAdmin(): start ");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
+
         User user = userService.login(email, password);
         if (user != null){
-            System.out.println("loginAdmin: TAK");
             HttpSession session = request.getSession();
             session.setAttribute("loggedUser",user);
             PageUtility.forwardToPage(request,response, PageList.ADMIN_HOME_PAGE);
         }else {
-            System.out.println("loginAdmin: NIE");
             messageService.setFailedLogin(request);
             PageUtility.forwardToPage(request,response,PageList.ADMIN_LOGIN_PAGE);
         }
@@ -44,7 +42,6 @@ public class AdminControllerImpl implements AdminController {
 
     @Override
     public void logOutAdmin(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        System.out.println("logOUT");
         HttpSession session = request.getSession();
         session.removeAttribute("loggedUser");
         PageUtility.sendRedirect(request,response,request.getContextPath()+"/admin/");

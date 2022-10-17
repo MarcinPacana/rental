@@ -3,44 +3,44 @@ package pl.rentalcar.frontend;
 import pl.rentalcar.MessageService;
 import pl.rentalcar.PageList;
 import pl.rentalcar.PageUtility;
-import pl.rentalcar.UserService;
 import pl.rentalcar.entity.Customer;
 import pl.rentalcar.GeneratorService;
+import pl.rentalcar.impl.CustomerService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class RegistrationController {
 
-    UserService<Customer> userService;
+    CustomerService customerService;
     MessageService messageService;
 
-    public RegistrationController(UserService<Customer> userService) {
-        this.userService = userService;
+    public RegistrationController(CustomerService customerService) {
+        this.customerService = this.customerService;
         this.messageService = new MessageService();
     }
 
     public void registerUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String email = request.getParameter("email");
 
-        boolean emailExist = userService.isEmailExist(email);
+        boolean emailExist = customerService.isEmailExist(email);
         if (emailExist){
             messageService.setEmailExist(request);
             PageUtility.forwardToPage(request,response, PageList.REGISTER_PAGE);
         }else {
             Customer customer = getCustomerFromRequest(request, email);
             setOtherParam(customer);
-            userService.add(customer);
+            customerService.add(customer);
             response.sendRedirect("login");
         }
     }
 
     private Customer setOtherParam(Customer customer){
         customer.setActive(true);
-        customer.setRegisteredDate(LocalDate.now());
+        customer.setRegisteredDate(LocalDateTime.now());
         return customer;
     }
 

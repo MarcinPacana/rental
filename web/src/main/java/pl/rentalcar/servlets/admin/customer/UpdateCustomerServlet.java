@@ -10,13 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-
-@WebServlet("/admin/newCustomer")
-public class AddNewCustomerServlet extends HttpServlet {
+@WebServlet("/admin/updateCustomer")
+public class UpdateCustomerServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         CustomerController customerController = new CustomerControllerimpl();
-        customerController.showCustomerAddForm(req,resp);
+        customerController.updateCustomer(req,resp);
     }
 }

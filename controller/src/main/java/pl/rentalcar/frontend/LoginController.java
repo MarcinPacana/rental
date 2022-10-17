@@ -2,9 +2,9 @@ package pl.rentalcar.frontend;
 
 import pl.rentalcar.PageList;
 import pl.rentalcar.PageUtility;
-import pl.rentalcar.UserService;
 import pl.rentalcar.entity.Customer;
 import pl.rentalcar.GeneratorService;
+import pl.rentalcar.impl.CustomerService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -14,11 +14,10 @@ import java.io.IOException;
 
 public class LoginController {
 
+    CustomerService userService;
 
-    UserService<Customer> userService;
-
-    public LoginController(UserService<Customer> userService) {
-        this.userService = userService;
+    public LoginController(CustomerService customerService) {
+        this.userService = customerService;
     }
 
     public void login(HttpServletRequest req, HttpServletResponse resp)

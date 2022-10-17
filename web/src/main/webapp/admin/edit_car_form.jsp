@@ -18,7 +18,7 @@ Edycja samochodu
             <tr>
                 <td>ID:</td>
                <td>
-                   <input type="number" name="id" value="${car.id}"    />
+                   <input type="number" name="id" value="${car.id}" disabled/>
                </td>
             </tr>
             <tr>

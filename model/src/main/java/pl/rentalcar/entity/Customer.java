@@ -1,7 +1,10 @@
 package pl.rentalcar.entity;
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -17,7 +20,7 @@ public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "klient_id", unique = true,nullable = false)
+    @Column(name = "klient_id", unique = true, nullable = false)
     private int id;
 
     @Column(name = "imie")
@@ -26,6 +29,7 @@ public class Customer {
     @Column(name = "nazwisko")
     private String lastName;
 
+    @Column(unique = true)
     private String email;
 
     @Column(name = "numer_telefonu")
@@ -35,7 +39,7 @@ public class Customer {
     private String password;
 
     @Column(name = "data_rejestracji")
-    private LocalDate registeredDate;
+    private LocalDateTime registeredDate;
 
     @Column(name = "kraj")
     private String country;
@@ -57,6 +61,7 @@ public class Customer {
 
     @Column(name = "urzytkownik_aktywny", nullable = false)
     private boolean isActive;
+
 
     @OneToMany(fetch = FetchType.LAZY,mappedBy = "customer")
     private Set<Reservation> reservationSet = new HashSet<>(0);
@@ -110,11 +115,11 @@ public class Customer {
         this.password = password;
     }
 
-    public LocalDate getRegisteredDate() {
+    public LocalDateTime getRegisteredDate() {
         return registeredDate;
     }
 
-    public void setRegisteredDate(LocalDate registeredDate) {
+    public void setRegisteredDate(LocalDateTime registeredDate) {
         this.registeredDate = registeredDate;
     }
 

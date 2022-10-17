@@ -6,7 +6,6 @@
 
 </head>
 <body>
-<jsp:include page="../fragments_jsp/admin_nav.jsp" />
 Admin login
 
 <form action="loginAdmin" method="post">
