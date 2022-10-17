@@ -25,6 +25,10 @@ public class PageList {
     public static final String ADMIN_EDIT_CAR_FORM = "edit_car_form.jsp";
 
     public static final String ADMIN_LIST_CUSTOMER = "customer_list.jsp";
+    public static final String ADMIN_ADD_CUSTOMER_FORM = "new_customer_form.jsp";
+    public static final String ADMIN_EDIT_CUSTOMER_FORM = "edit_customer_form.jsp";
+
+
     public static final String ADMIN_LIST_RESERVATION = "reservation_list.jsp";
 
 }

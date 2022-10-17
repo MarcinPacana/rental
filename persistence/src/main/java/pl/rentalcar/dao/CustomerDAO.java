@@ -17,17 +17,17 @@ public class CustomerDAO extends JpaDAO<Customer> implements GenericCRUD<Custome
 
     @Override
     public Customer get(int id) {
-        return null;
+        return super.find(Customer.class,id);
     }
 
     @Override
-    public Customer update(Customer t) {
-        return null;
+    public Customer update(Customer customer) {
+        return super.update(customer);
     }
 
     @Override
     public void delete(int id) {
-
+        super.delete(Customer.class,id);
     }
 
     @Override

@@ -2,8 +2,7 @@ package pl.rentalcar.frontend;
 
 import pl.rentalcar.PageList;
 import pl.rentalcar.PageUtility;
-import pl.rentalcar.UserService;
-import pl.rentalcar.entity.Customer;
+import pl.rentalcar.impl.CustomerService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -13,10 +12,10 @@ import java.io.IOException;
 public class CustomerController {
 
 
-    UserService<Customer> userService;
+   CustomerService customerService;
 
-    public CustomerController(UserService<Customer> userService) {
-        this.userService = userService;
+    public CustomerController(CustomerService customerService) {
+        this.customerService = customerService;
     }
 
     public void showCustomerProfile(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
