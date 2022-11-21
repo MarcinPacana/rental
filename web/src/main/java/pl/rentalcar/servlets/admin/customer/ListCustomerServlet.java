@@ -1,7 +1,7 @@
 package pl.rentalcar.servlets.admin.customer;
 
 import pl.rentalcar.admin.CustomerController;
-import pl.rentalcar.admin.implement.CustomerControllerimpl;
+import pl.rentalcar.admin.implement.ManageCustomerController;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,7 +16,7 @@ public class ListCustomerServlet extends HttpServlet {
     CustomerController customerController;
 
     public ListCustomerServlet( ) {
-        this.customerController = new CustomerControllerimpl();
+        this.customerController = new ManageCustomerController();
     }
 
     @Override

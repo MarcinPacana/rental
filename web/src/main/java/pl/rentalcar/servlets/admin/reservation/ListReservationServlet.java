@@ -1,7 +1,7 @@
 package pl.rentalcar.servlets.admin.reservation;
 
 import pl.rentalcar.admin.ReservationController;
-import pl.rentalcar.admin.implement.ReservationControllerImpl;
+import pl.rentalcar.admin.implement.ManageReservationController;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,7 +16,7 @@ public class ListReservationServlet extends HttpServlet {
     ReservationController reservationController;
 
     public ListReservationServlet( ) {
-        this.reservationController = new ReservationControllerImpl();
+        this.reservationController = new ManageReservationController();
     }
 
     @Override

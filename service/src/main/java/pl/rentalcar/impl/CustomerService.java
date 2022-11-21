@@ -53,7 +53,6 @@ public class CustomerService {
     }
 
 
-
     public Customer login(String email, String password){
         CustomerDAO customerDAO = new CustomerDAO();
         return customerDAO.checkLogin(email,password);
@@ -62,6 +61,31 @@ public class CustomerService {
     public Customer getCustomerFromRequest(HttpServletRequest request){
         Customer customer = new Customer();
         readCustomerFields(request, customer);
+        return customer;
+    }
+
+    public Customer createCustomerFromRequest(HttpServletRequest request){
+        Customer customer = new Customer();
+        customer.setFirstName(request.getParameter("firstName"));
+        customer.setLastName(request.getParameter("lastName"));
+        customer.setEmail(request.getParameter("email"));
+        customer.setPhoneNumber(Integer.parseInt(request.getParameter("phoneNumber")));
+
+        String password = request.getParameter("password");
+        String passwordMD = GeneratorService.generateMD5(password);
+        customer.setPassword(passwordMD);
+
+        customer.setCountry(request.getParameter("country"));
+        customer.setCity(request.getParameter("city"));
+        customer.setStreet(request.getParameter("streat"));
+        customer.setFlatNumber(request.getParameter("flatNumber"));
+        customer.setZipCode(request.getParameter("zipCode"));
+
+        customer.setToken(request.getParameter("token"));
+        customer.setActive(Boolean.parseBoolean(request.getParameter("active")));
+
+        customer.setRegisteredDate(LocalDateTime.now());
+        customer.setActive(false);
         return customer;
     }
 

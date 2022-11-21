@@ -1,7 +1,7 @@
 package pl.rentalcar.servlets.admin.customer;
 
 import pl.rentalcar.admin.CustomerController;
-import pl.rentalcar.admin.implement.CustomerControllerimpl;
+import pl.rentalcar.admin.implement.ManageCustomerController;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,7 +15,7 @@ public class DeleteCustomerServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        CustomerController customerController = new CustomerControllerimpl();
+        CustomerController customerController = new ManageCustomerController();
         customerController.deleteCustomer(req,resp);
     }
 }

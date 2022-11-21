@@ -1,7 +1,7 @@
 package pl.rentalcar.servlets.admin.car;
 
 import pl.rentalcar.admin.CarController;
-import pl.rentalcar.admin.implement.CarControllerImpl;
+import pl.rentalcar.admin.implement.ManageCarController;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,7 +17,7 @@ public class AddNewCarServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        CarController carController = new CarControllerImpl();
+        CarController carController = new ManageCarController();
         carController.showNewCarForm(req,resp);
     }
 }

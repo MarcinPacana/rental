@@ -8,7 +8,6 @@ import java.io.IOException;
 public interface AdminController {
     public void loginAdmin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException;
     public void logOutAdmin(HttpServletRequest request, HttpServletResponse response) throws IOException;
-
     public void showLoginFormAdmin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException;
     public void showAdminHomePage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException;
 }

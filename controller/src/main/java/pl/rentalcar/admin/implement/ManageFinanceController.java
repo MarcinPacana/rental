@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class FinanseControllerImpl implements FinanseController {
+public class ManageFinanceController implements FinanseController {
     @Override
     public void showFinanseHomePage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PageUtility.forwardToPage(request,response, PageList.ADMIN_FINANSE_HOME_PAGE);

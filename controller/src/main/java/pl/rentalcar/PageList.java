@@ -9,6 +9,9 @@ public class PageList {
     public static final String LOGIN_PAGE= "frontend/login_page.jsp";
 
     public static final String CAR_LIST_PAGE = "frontend/car_list.jsp";
+    public static final String FRONTEND_CAR_DETAIL = "frontend/car_detail.jsp";
+
+
     public static final String CONTACT_PAGE = "frontend/contact_page.jsp";
 
     public static final String PROFILE_PAGE = "frontend/profile_page.jsp";

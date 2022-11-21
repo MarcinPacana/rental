@@ -1,6 +1,8 @@
 package pl.rentalcar.servlets.frontend.customer;
 
 import pl.rentalcar.PageList;
+import pl.rentalcar.entity.Customer;
+import pl.rentalcar.frontend.CustomerController;
 import pl.rentalcar.frontend.RegistrationController;
 import pl.rentalcar.impl.CustomerService;
 
@@ -14,10 +16,10 @@ import java.io.IOException;
 @WebServlet("/register")
 public class RegisterServlet extends HttpServlet {
 
-    RegistrationController registrationController;
+    CustomerController customerController;
 
     public RegisterServlet() {
-        this.registrationController = new RegistrationController(new CustomerService());
+        this.customerController = new CustomerController(new CustomerService());
     }
 
     @Override
@@ -27,6 +29,6 @@ public class RegisterServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        registrationController.registerUser(req,resp);
+        customerController.registerCustomer(req,resp);
     }
 }

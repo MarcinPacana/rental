@@ -38,11 +38,7 @@ public class CustomerDAO extends JpaDAO<Customer> implements GenericCRUD<Custome
 
     public boolean emailExist(String email) {
         List<Customer> customerList = super.findWithNameQuery("Customer.findByEmail","email",email);
-        if (customerList.isEmpty()){
-            return false;
-        }else {
-            return true;
-        }
+        return !customerList.isEmpty();
     }
 
     public Customer checkLogin(String email, String password) {

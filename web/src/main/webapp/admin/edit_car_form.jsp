@@ -13,12 +13,12 @@ Edycja samochodu
 
 <div>
     <form action="updateCar" method="post" enctype="multipart/form-data">
-
+        <input type="number" name="id" value="${car.id}" hidden />
         <table>
             <tr>
                 <td>ID:</td>
                <td>
-                   <input type="number" name="id" value="${car.id}" disabled/>
+                   <input type="number" name="disabled" value="${car.id}" disabled />
                </td>
             </tr>
             <tr>

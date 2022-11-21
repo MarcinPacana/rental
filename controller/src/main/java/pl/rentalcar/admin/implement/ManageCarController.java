@@ -13,12 +13,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-public class CarControllerImpl implements CarController {
+public class ManageCarController implements CarController {
 
     CarServices carServices;
     Validator validator;
 
-    public CarControllerImpl() {
+    public ManageCarController() {
         this.carServices = new CarServices();
         this.validator = new Validator();
     }
@@ -65,7 +65,12 @@ public class CarControllerImpl implements CarController {
     public void updateCar(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         boolean requiredFields = validator.isAllRequiredFieldNotEmptyForCar(req);
         if (requiredFields){
-            Car car = carServices.getById(Integer.parseInt(req.getParameter("id")));
+            String id = req.getParameter("id");
+            String id1 = req.getParameter("id");
+            System.out.println("id"+id);
+            System.out.println("id1"+id1);
+
+            Car car = carServices.getById(Integer.parseInt(id));
             carServices.updateCarFields(req,car);
             carServices.updateCar(car);
         }

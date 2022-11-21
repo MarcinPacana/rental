@@ -70,6 +70,7 @@ Nowe auto form
                 <tr>
                     <td>
                         <button type="submit">Zapisz</button>
+                        <button type="button" id="buttonCancel">Anuluj</button>
                     </td>
                 </tr>
 
@@ -82,6 +83,10 @@ Nowe auto form
     $(document).ready(function () {
         $("#carImage").change(function () {
             showImageThumbnail(this);
+        });
+
+        $("#buttonCancel").click(function (){
+            history.go(-1);
         });
     });
 

@@ -1,7 +1,7 @@
 package pl.rentalcar.servlets.admin.finanse;
 
 import pl.rentalcar.admin.FinanseController;
-import pl.rentalcar.admin.implement.FinanseControllerImpl;
+import pl.rentalcar.admin.implement.ManageFinanceController;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,7 +16,7 @@ public class FinanseHomeServlet extends HttpServlet {
     FinanseController finanseController;
 
     public FinanseHomeServlet() {
-        this.finanseController = new FinanseControllerImpl();
+        this.finanseController = new ManageFinanceController();
     }
 
     @Override

@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-public class CustomerControllerimpl implements CustomerController {
+public class ManageCustomerController implements CustomerController {
 
     private static final String UPDATE_CLIENT_FAILED = "Nie udało się zaktualizować danych klięta";
 
@@ -19,7 +19,7 @@ public class CustomerControllerimpl implements CustomerController {
     Validator validator;
     MessageService messageService;
 
-    public CustomerControllerimpl() {
+    public ManageCustomerController() {
         this.customerService = new CustomerService();
         this.validator = new Validator();
         this.messageService = new MessageService();

@@ -67,12 +67,13 @@ public class Validator {
         return true;
     }
 
-    private boolean checkMail(String mail) {
+    public boolean checkMail(String mail) {
         Pattern pattern = Pattern.compile("^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
         Matcher matcher = pattern.matcher(mail);
         if (matcher.matches()) return true;
         else return false;
     }
+
     private boolean checkPassword(String password) {
         Pattern pattern = Pattern.compile("^[A-Za-z1-9]+$");
         Matcher matcher = pattern.matcher(password);
